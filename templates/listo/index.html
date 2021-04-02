@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Listo - Premium Real Estate Template</title>
+<meta name="description" content="Live preview for Listo - Premium Real Estate Template">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900" rel="stylesheet">
+
+<style>
+*, ::after, ::before {
+	box-sizing: border-box;
+}
+body, html {
+	margin: 0;
+	font-family: 'Maven Pro';
+	font-size: 14px;
+}
+#tray {
+	padding: 1rem;
+	background: #222;
+	color: #FFF;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+}
+#tray a {
+	color: #fff;
+	text-decoration: none;
+}
+#tray h1 {
+	font-size: 18px;
+	font-weight: normal;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+#tray .brand {
+	margin-right: 2rem;
+}
+#tray .remove {
+	margin-left: auto;
+}
+#tray .buynow {
+    margin-right: 30px;
+    margin-top: 5px;
+    margin-right: 5px;
+    border: 1px solid #ff7400;
+    padding: 7px 15px;
+    border-radius: 3px;
+    color: #fff;
+    background: #ff7400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    display: inline-block;
+}
+</style>
+</head>
+<body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117300564-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117300564-1');
+</script>
+
+<div id="main">
+  <div id="tray">
+      <a class="brand" href="http://uilove.in/"><img src="/resources/images/ui.png" width="30" height="30" alt="WrapBootstrap" title="Bootstrap Templates &amp; Themes from WrapBootstrap"></a>
+      <h1 id="item_name"><a href="https://wrapbootstrap.com/theme/listo-premium-real-estate-template-WB03544N0">ProjectAi - AI Agencies &amp; Startups Template</a></h1>
+
+      <div class="remove">
+<a class="btn buynow" href="https://wrapbootstrap.com/theme/listo-premium-real-estate-template-WB03544N0" title="Remove this frame">Buy Now</a>
+<a class="btn" href="http://uilove.in/realestate/listo/preview/index.html" title="Remove this frame">Remove this frame &raquo;</a>
+</div>
+      </div>
+  <iframe id="preview" src="http://uilove.in/realestate/listo/preview/index.html" noresize="noresize" frameborder="0"></iframe>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+<script>
+	$(document).ready(function(){
+		function fix_height(){
+			var h = $("#tray").height();    
+			$("#preview").attr("height", (($(window).height()) - h) + "px");
+		}
+		$(window).resize(function(){ fix_height(); }).resize();
+	});
+</script>
+</body>
+</html>
