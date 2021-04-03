@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\Input;
 
 class AuthController extends Controller
 {
@@ -19,7 +20,7 @@ class AuthController extends Controller
 
     public function pageLogin()
     {
-        return view('login');
+        return view('auth.login');
     }
 
     public function pageRegister()
@@ -29,13 +30,13 @@ class AuthController extends Controller
 
     public function login(LoginRequest $request): RedirectResponse
     {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember_me)) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], ($request->remember_me) ? true : false)) {
             $request->session()->regenerate();
 
             return redirect()->route('home');
         }
 
-        return back()->withErrors([
+        return back()->withInput()->withErrors([
             'password' => 'Mật khẩu không chính xác!',
             'forgotPassword' => 'Nếu bạn quên mật khẩu hãy bấm "Quên mật khẩu"',
         ]);

@@ -24,7 +24,7 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => ['required', 'exists:users,email', 'ends_with:@gmail.com'],
+            'email' => ['required', 'email', 'exists:users,email', 'ends_with:@gmail.com'],
             'password' => ['required', 'between:6,8']
         ];
     }
@@ -33,8 +33,9 @@ class LoginRequest extends FormRequest
     {
         return [
             'email.required' => 'Email không được bỏ trống!',
+            'email.email' => 'Email sai định dạng!',
             'email.exists' => 'Email không tồn tại!',
-            'email.ends_with' => 'Email cần phải có định dang: <tên...\>@gmail.com',
+            'email.ends_with' => 'Email cần phải có định dạng: <tên...\>@gmail.com',
             'password.required' => 'Mật khẩu không được bỏ trống!',
             'password.between' => 'Mật khẩu có độ dài từ 6 đến 8 ký tự!',
         ];
