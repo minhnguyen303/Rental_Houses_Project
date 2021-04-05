@@ -33,11 +33,11 @@ class LoginRequest extends FormRequest
     {
         return [
             'email.required' => 'Email không được bỏ trống!',
-            'email.email' => 'Email sai định dạng!',
+            'email.email' => 'Email không đúng định dạng!',
             'email.exists' => 'Email không tồn tại!',
-            'email.ends_with' => 'Email cần phải có định dạng: <tên...\>@gmail.com',
+            'email.ends_with' => 'Email không đúng định dạng!',
             'password.required' => 'Mật khẩu không được bỏ trống!',
-            'password.between' => 'Mật khẩu có độ dài từ 6 đến 8 ký tự!',
+            'password.between' => 'Mật khẩu phải có độ dài từ 6 đến 8 ký tự!',
         ];
     }
 }
