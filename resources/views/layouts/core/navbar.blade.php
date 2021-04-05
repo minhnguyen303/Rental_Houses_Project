@@ -141,7 +141,7 @@
                         </div>
                     </li>
                 @else
-                    <li class="nav-item"><a class="nav-link nav-btn" href="{{ route('home') }}"><span><i class="fa fa-user-plus" aria-hidden="true"></i> Đăng ký</span></a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="{{ route('auth.register') }}"><span><i class="fa fa-user-plus" aria-hidden="true"></i> Đăng ký</span></a></li>
                     <li class="nav-item"><a class="nav-link nav-btn" href="{{ route('auth.login') }}"><span><i class="fa fa-sign-in" aria-hidden="true"></i> Đăng nhập</span></a></li>
                 @endauth
             </ul>

@@ -12,9 +12,9 @@
                             <li class="breadcrumb-item active" aria-current="page">Đăng nhập</li>
                         </ol>
                     </nav>
-                    <div class="page-header">
+                    {{--<div class="page-header text-center">
                         <h1>Vui lòng đăng nhập hoặc đăng ký</h1>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </div>
@@ -24,10 +24,10 @@
                     <div class="col col-md-6 col-lg-5 col-xl-4">
                         <ul class="nav nav-tabs tab-lg justify-content-center" role="tablist">
                             <li role="presentation" class="nav-item w-50">
-                                <a class="nav-link text-center active">Đăng nhập</a>
+                                <a class="nav-link text-center active"  >Đăng nhập</a>
                             </li>
                             <li role="presentation" class="nav-item w-50">
-                                <a class="nav-link text-center" href="#">Đăng ký</a>
+                                <a class="nav-link text-center" href="{{ route('auth.register') }}">Đăng ký</a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -36,7 +36,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="email">Địa chỉ Email</label>
-                                        <input type="email" name="email" id="email" class="form-control form-control-lg @error('email') is-invalid @enderror" value="{{ old('email') }}">
+                                        <input type="email" name="email" id="email" class="form-control form-control-lg @error('email') is-invalid @enderror" value="{{ old('email') }}" required>
                                         <div class="invalid-feedback">
                                             @error('email')
                                             {{ $message }}
@@ -46,7 +46,7 @@
                                     <div class="form-group">
                                         <label for="password">Mật khẩu</label>
                                         <div class="input-group">
-                                            <input type="password" name="password" id="password" class="form-control form-control-lg @error('password') is-invalid @enderror">
+                                            <input type="password" name="password" id="password" class="form-control form-control-lg @error('password') is-invalid @enderror" required minlength="6" maxlength="8">
                                             <div class="input-group-append">
                                                 <button class="btn btn-light border ml-1" type="button" id="toggleShowPassword"><i class="fa fa-eye"></i></button>
                                             </div>
@@ -69,7 +69,7 @@
                                         <input type="checkbox" name="remember_me" id="remember_me">
                                         <label for="remember_me">Ghi nhớ đăng nhập</label>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-lg">Đăng nhập</button>
+                                    <button type="submit" class="btn btn-primary btn-lg d-block ml-auto">Đăng nhập</button>
                                 </form>
                             </div>
                         </div>
